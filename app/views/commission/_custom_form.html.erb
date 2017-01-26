@@ -9,8 +9,8 @@
 
     <p>Tarjeta: 
     <%= f.text_field :card, value: 3.5, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>%</p>
-    
-    <%= f.hidden_field :event_id, value: params[:event_id]%></p>
+    <%= f.hidden_field :type, value: 1%></p>
+    <%= f.hidden_field :id, value: params[:event_id]%></p>
     
     <p>*Nota: Las comisiones son por ticket.</p>
     <%= f.submit("Personalizar", class: "btn btn-cstom") %>
