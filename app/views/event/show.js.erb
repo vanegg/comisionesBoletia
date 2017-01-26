@@ -1,1 +1,27 @@
-$(".found_events").empty().append("<%= @event.id%> lala");
+<% if @status%>
+
+	title 			= "Evento encontrado N° <%= @event.id%><br>";
+	event 			= "Evento: <%= @event.name%><br>";
+	category 		= "<%= @event.category%><br>"
+	place 			= "En <%= @event.place%>";
+	date 				= "el día <%= @event.date_event%><br>"
+	description = "Descripción: <%= @event.description%><br>"
+	organizer		= "Organizado por: <%= @user%><br>"
+
+	$(".found_events").empty().append(title + event + category + place + date + description + organizer	);
+
+	<% if @event.hasCommission %>
+		$(".found_events").append("<button type='button' class='' data-toggle='modal' data-target='#commissionModal'>Eliminar comisión personalizada</button>");
+	<%else%>
+		$(".found_events").append("<button type='button' class='' data-toggle='modal' data-target='#commissionModal'>Personalizar comisión</button>");
+	<%end%>
+		$(".found_events").append("<button type='button' class=''> Simular compra</button>");
+	
+<%else%>
+
+	$(".found_events").empty().append('<h3>Evento no encontrado</h3>')
+
+<%end%>
+
+
+modal = "";

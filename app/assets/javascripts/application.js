@@ -19,5 +19,11 @@
 
 function isNumberKey(e) {
   var charCode = (e.which) ? e.which : event.keyCode
+  console.log(charCode)
   return (charCode > 31 && (charCode < 48 || charCode > 57)) ? false : true
+}
+
+function isNumberKeyorPoint(e) {
+  var charCode = (e.which) ? e.which : event.keyCode
+  return ((charCode > 31 && (charCode < 48 || charCode > 57)) || charCode == 46) ? false : true
 }

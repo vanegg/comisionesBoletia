@@ -5,6 +5,7 @@ class EventController < ApplicationController
 			id = params[:event_id]
 			if Event.exists?(id)
 				@event = Event.find(id)
+				@user = User.find(@event.user_id).name
 				@status = true
 
       	#format.js { flash.now[:success] = "¡Evento encontrado!" }
