@@ -1,47 +1,10 @@
 <h1>Módulo para personalizar comisiones</h1>
 
-<div class= "row">
-	
+<div class= "row">	
 	<div class= "col-md-6">
-
-
-		<h4> Buscador por Evento</h4>
-		<div class="form-group">
-
-			<%=form_tag event_path, method: :get, remote: true do%>
-				<h4> id:</h4>
-		  	<%= text_field_tag 'event_id', nil, placeholder: 'Ingresa el id del evento..',class: "form-control", onkeypress: "return isNumberKey(event)"%>
-
-          <%= submit_tag("Buscar", class: "btn btn-cstom")  %>
-
-			<%end%>
-		</div>
-		<div class= "found_events">	</div>
+		
+		<%= render partial: 'event/search'%>
 
 	</div>
 
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="commissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Comisión Personalizada</h4>
-      </div>
-      <%=form_tag new_commission_path, method: :get do%>
-      <div class="modal-body">
-        <p>Indica las nuevas comisiones por depósito y por tarjeta:</p>
-        <p>Depósito: $<%= text_field_tag 'commission_deposit', 10.00, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%></p>
-        <p>Tarjeta: <%= text_field_tag 'commision_card', 3.5, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>%</p>
-        <p>*Nota: Las comisiones son por ticket.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= submit_tag("Personalizar", class: "btn btn-cstom")  %>
-      </div>
-      <%end%>
-    </div>
-  </div>
 </div>

@@ -11,9 +11,9 @@
 	$(".found_events").empty().append(title + event + category + place + date + description + organizer	);
 
 	<% if @event.hasCommission %>
-		$(".found_events").append("<button type='button' class='' data-toggle='modal' data-target='#commissionModal'>Eliminar comisión personalizada</button>");
+		$(".found_events").append("<button type='button' class=''>Eliminar comisión personalizada</button>");
 	<%else%>
-		$(".found_events").append("<button type='button' class='' data-toggle='modal' data-target='#commissionModal'>Personalizar comisión</button>");
+		$(".found_events").append("<button type='button' class=''>Personalizar comisión</button>");
 	<%end%>
 		$(".found_events").append("<button type='button' class=''> Simular compra</button>");
 	
@@ -22,6 +22,3 @@
 	$(".found_events").empty().append('<h3>Evento no encontrado</h3>')
 
 <%end%>
-
-
-modal = "";
