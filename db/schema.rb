@@ -16,26 +16,26 @@ ActiveRecord::Schema.define(version: 20170125194137) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.decimal  "price_ticket",     null: false
-    t.integer  "ticket_quantity",  null: false
-    t.string   "payment_method",   null: false
-    t.decimal  "commission",       null: false
-    t.decimal  "total_commission", null: false
-    t.decimal  "total_price",      null: false
+    t.float    "price_ticket",      null: false
+    t.integer  "ticket_quantity",   null: false
+    t.string   "payment_method",    null: false
+    t.float    "ticket_commission", null: false
+    t.float    "total_commission",  null: false
+    t.float    "total_price",       null: false
     t.integer  "event_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["event_id"], name: "index_bookings_on_event_id", using: :btree
   end
 
   create_table "commissions", force: :cascade do |t|
-    t.decimal  "card",       default: "3.5",  null: false
-    t.decimal  "deposit",    default: "10.0", null: false
+    t.float    "card",       default: 3.5,  null: false
+    t.float    "deposit",    default: 10.0, null: false
     t.integer  "user_id"
     t.integer  "event_id"
     t.integer  "booking_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.index ["booking_id"], name: "index_commissions_on_booking_id", using: :btree
     t.index ["event_id"], name: "index_commissions_on_event_id", using: :btree
     t.index ["user_id"], name: "index_commissions_on_user_id", using: :btree
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20170125194137) do
     t.string   "place",                         null: false
     t.string   "category",                      null: false
     t.integer  "assistance",                    null: false
-    t.date     "date_event",                    null: false
-    t.string   "description"
+    t.datetime "date_event",                    null: false
+    t.text     "description"
     t.boolean  "hasCommission", default: false
     t.integer  "user_id"
     t.datetime "created_at",                    null: false
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170125194137) do
     t.string   "name",                          null: false
     t.string   "email",                         null: false
     t.string   "address",                       null: false
-    t.string   "phone"
+    t.string   "phone",                         null: false
     t.string   "account",                       null: false
     t.boolean  "hasCommission", default: false
     t.datetime "created_at",                    null: false
