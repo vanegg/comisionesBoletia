@@ -2,6 +2,7 @@
 
 	<% if @status%>
 
+		<div class= "event-data">
 		<p>"Evento encontrado N° <%= @event.id%></p>
 		<p>"Evento: <%= @event.name%></p>
 		<p>va"<%= @event.category%></p>
@@ -9,19 +10,22 @@
 		<p>"el día <%= @event.date_event%></p>
 		<p>"Descripción: <%= @event.description%></p>
 		<p>"Organizado por: <%= @user%></p>
-
-		<% if @event.hasCommission %>
-			<%= link_to "Eliminar comisión personalizada", 
-      { controller: 'commission', action: 'destroy', id: @event.commission.id },
-      { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
-      	method: :delete, remote: false, class: 'btn btn-cstm'} %>
-		<%else%>
-			<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
-			<%=render(:partial => 'commission/custom_form', locals: {event_id: @event.id}) %>
-
-		<%end%>
-			<button type='button' id='btn-simulate' class='btn btn-cstm'> Simular compra</button>
-		
+		</div>
+		<div class = "event-buttons">
+			<% if @event.hasCommission %>
+				<%= link_to "Eliminar comisión personalizada", 
+	      { controller: 'commission', action: 'destroy', id: @event.commission.id },
+	      { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
+	      	method: :delete, remote: false, class: 'btn btn-cstm'} %>
+			<%else%>
+				<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
+				<%= render 'commission/custom_form',
+				object: @type = '1' %>
+				<%puts "lalalala"%>
+			<%end%>
+			<br>
+				<button type='button' id='btn-simulate' class='btn btn-cstm'> Simular compra</button>
+		</div>	
 	<%else%>
 		<h3>Evento no encontrado</h3>
 	<%end%>

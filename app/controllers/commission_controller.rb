@@ -7,7 +7,7 @@ class CommissionController < ApplicationController
   end
 
   def create
-    puts @commission = Commission.new(card: params[:commission][:card],
+    @commission = Commission.new(card: params[:commission][:card],
     							 										deposit: params[:commission][:deposit]
     																 )
     case params[:commission][:type] 

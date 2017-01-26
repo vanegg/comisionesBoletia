@@ -13,10 +13,10 @@ class EventController < ApplicationController
 				@user = User.find(@event.user_id).name
 				@status = true
 				flash[:success] = "¡Evento encontrado!"				
-			else
+		else
 				@status = false
 				flash[:danger]	= "¡Evento no encontrado!"
-			end
+		end
 	end
 
 	def destroy

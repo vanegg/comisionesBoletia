@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/home',					to: 'commission#home'
   # get '/event',					to: 'event#show', 			as: 'event'
-  # post "/commission/create",	to: 'commission#create', 	as: 'create_commission'
+  post "/commission/create",	to: 'commission#create', 	as: 'create_commission'
   # delete "/commission/delete",	to: 'commission#destroy',	as: 'delete_commission'
   resources :commission
   resources :event
