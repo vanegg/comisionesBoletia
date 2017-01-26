@@ -20,17 +20,22 @@ $(document).ready(function(){
 
   $("body").on("click", '#customize', function(){
     $(".customize_commission").toggle(1000);
+    $('#customize').hide();
   });
+
+  $("body").on("click", '#btn-cancel', function(){
+    $(".customize_commission").hide(1000);
+    $('#customize').show(1000);
+  });
+
 });
 
 function isNumberKey(e) {
   var charCode = (e.which) ? e.which : event.keyCode;
-  console.log(charCode);
   return (charCode > 31 && (charCode < 48 || charCode > 57)) ? false : true
 }
 
 function isNumberKeyorPoint(e) {
   var charCode = (e.which) ? e.which : event.keyCode;
-  console.log(charCode);
   return (charCode > 31 && charCode != 46 && (charCode < 48 || charCode > 57)) ? false : true
 }

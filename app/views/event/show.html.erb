@@ -1,0 +1,29 @@
+<div class="event-group">	
+
+	<% if @status%>
+
+		<p>"Evento encontrado N° <%= @event.id%></p>
+		<p>"Evento: <%= @event.name%></p>
+		<p>va"<%= @event.category%></p>
+		<p>"En <%= @event.place%></p>
+		<p>"el día <%= @event.date_event%></p>
+		<p>"Descripción: <%= @event.description%></p>
+		<p>"Organizado por: <%= @user%></p>
+
+		<% if @event.hasCommission %>
+			<%= link_to "Eliminar comisión personalizada", 
+      { :controller => 'commission', :action => 'destroy', :id => @event.id },
+      { :confirm => "¿Estás seguro de eliminar la comisión personalizada?", 
+      	:method => :delete, :remote => false} %>
+		<%else%>
+			<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
+			<%=render(:partial => 'commission/custom_form', locals: {event_id: @event.id}) %>
+
+		<%end%>
+			<button type='button' id='btn-simulate' class='btn btn-cstm'> Simular compra</button>
+		
+	<%else%>
+		<h3>Evento no encontrado</h3>
+	<%end%>
+
+</div>

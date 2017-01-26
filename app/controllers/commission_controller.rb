@@ -7,9 +7,9 @@ class CommissionController < ApplicationController
   end
 
   def create
-    puts @commission = Commission.new(	card: params[:commission][:card],
-    							 								deposit: params[:commission][:deposit]
-    														)
+    puts @commission = Commission.new(card: params[:commission][:card],
+    							 										deposit: params[:commission][:deposit]
+    																 )
     case params[:commission][:type] 
     when "0"
     	@commission.booking_id = params[:commission][:id]
@@ -18,17 +18,29 @@ class CommissionController < ApplicationController
     	if Event.exists?(params[:commission][:id])
     		event = Event.find(params[:commission][:id])
     		event.hasCommission = true
-    		puts '************+'
-    		puts event.save
     	end
     else
     	@commission.user_id = params[:commission][:id]
+    	if User.exists?(params[:commission][:id])
+    		user = User.find(params[:commission][:id])
+    		user.hasCommission = true
+    	end
     end
 
     if @commission.save
-      flash[:success] = "Commission successfully saved"
+      flash.now[:success] = "Commission successfully saved"
     else
-      flash[:error] = "Commission not saved in database"
+      flash.now[:error] = "Commission not saved in database"
     end
+    redirect_to(:back)
   end
+
+  def destroy
+  	puts '***********'
+		puts params
+		Event.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
+  end
+
 end

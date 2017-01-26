@@ -1,12 +1,24 @@
 <h4> Buscador por Evento</h4>
+
 <div class="form-group">
 
-	<%=form_tag event_path, method: :get, remote: true do%>
-		<h4> id:</h4>
-	  <%= text_field_tag 'event_id', nil, placeholder: 'Ingresa el id del evento..',class: "form-control", onkeypress: "return isNumberKey(event)"%>
+	<%=form_tag event_show_path, method: :post, remote: false do%>
 
-    <%= submit_tag("Buscar", class: "btn btn-cstom")  %>
+		<div class="row">
+			<div class="col-sm-1">
+			 	<h4> id:</h4>
+			</div>
 
+			<div class="col-sm-6">			
+				<%= text_field_tag 'event_id', nil, placeholder: 'Ingresa el id del evento..',class: "form-control", onkeypress: "return isNumberKey(event)"%>
+			</div>
+
+			<div class="col-sm-2">
+			 	<%= submit_tag("Buscar", class: "btn btn-cstom")  %>
+			</div>
+		</div>	
 	<%end%>
+
 </div>
+
 <div class= "found_events">	</div>
