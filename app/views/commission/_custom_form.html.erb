@@ -1,0 +1,11 @@
+<div class= 'customize_commission' style="display: none">
+
+	<%=form_tag new_commission_path do%>
+    <p>Indica las nuevas comisiones por depósito y por tarjeta:</p>
+    <p>Depósito: $<%= text_field_tag 'commission_deposit', 10.00, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%></p>
+    <p>Tarjeta: <%= text_field_tag 'commision_card', 3.5, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>%</p>
+    <p>*Nota: Las comisiones son por ticket.</p>
+    <%= submit_tag("Personalizar", class: "btn btn-cstom")  %>
+	<%end%>
+
+</div>

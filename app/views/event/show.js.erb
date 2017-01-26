@@ -13,7 +13,9 @@
 	<% if @event.hasCommission %>
 		$(".found_events").append("<button type='button' class=''>Eliminar comisión personalizada</button>");
 	<%else%>
-		$(".found_events").append("<button type='button' class=''>Personalizar comisión</button>");
+		$(".found_events").append("<button type='button' id='customize'>Personalizar comisión</button>");
+		$(".found_events").append("<%= j render(:partial => 'commission/custom_form') %>");
+
 	<%end%>
 		$(".found_events").append("<button type='button' class=''> Simular compra</button>");
 	

@@ -27,3 +27,11 @@ function isNumberKeyorPoint(e) {
   var charCode = (e.which) ? e.which : event.keyCode
   return ((charCode > 31 && (charCode < 48 || charCode > 57)) || charCode == 46) ? false : true
 }
+
+$(document).ready(function(){
+
+  $("body").on("click", '#customize', function(){
+  	console.log("click");
+    $(".customize_commission").toggle(1000);
+  });
+});
