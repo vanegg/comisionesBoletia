@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+function isNumberKey(e) {
+  var charCode = (e.which) ? e.which : event.keyCode
+  return (charCode > 31 && (charCode < 48 || charCode > 57)) ? false : true
+}

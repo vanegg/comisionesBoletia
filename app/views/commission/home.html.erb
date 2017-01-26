@@ -1,4 +1,23 @@
-<h1>Commission#home</h1>
-<p>Find me in app/views/commission/home.html.erb</p>
+<h1>Módulo para personalizar comisiones</h1>
+
+<div class= "row">
+	
+	<div class= "col-md-6">
 
 
+		<h4> Buscador por Evento</h4>
+		<div class="form-group">
+
+			<%=form_tag event_path, method: :get, remote: true do%>
+				<h4> id:</h4>
+		  	<%= text_field_tag 'event_id', nil, placeholder: 'Ingresa el id del evento..',class: "form-control", onkeypress: "return isNumberKey(event)"%>
+
+          <%= submit_tag("Buscar", class: "btn btn-cstom")  %>
+
+			<%end%>
+		</div>
+		<div class= "found_events">	</div>
+
+	</div>
+
+</div>
