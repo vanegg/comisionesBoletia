@@ -12,9 +12,9 @@
 
 		<% if @event.hasCommission %>
 			<%= link_to "Eliminar comisión personalizada", 
-      { :controller => 'commission', :action => 'destroy', :id => @event.id },
-      { :confirm => "¿Estás seguro de eliminar la comisión personalizada?", 
-      	:method => :delete, :remote => false} %>
+      { controller: 'commission', action: 'destroy', id: @event.commission.id },
+      { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
+      	method: :delete, remote: false, class: 'btn btn-cstm'} %>
 		<%else%>
 			<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
 			<%=render(:partial => 'commission/custom_form', locals: {event_id: @event.id}) %>

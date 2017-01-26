@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources	:user
 
   post "/event/search", to: "event#search", as: "event_show"
+  post "/user/search", to: "user#search", as: "user_show"
 end

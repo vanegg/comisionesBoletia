@@ -20,7 +20,6 @@ class EventController < ApplicationController
 	end
 
 	def destroy
-
 	end
 
 end

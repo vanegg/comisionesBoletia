@@ -1,0 +1,26 @@
+<div class="user-group">	
+
+	<% if @status%>
+
+		<p>Usuario encontrado N° <%= @user.id%></p>
+		<p>Usuario: <%= @user.name %></p>
+		<p>email:<%= @user.email %></p>
+
+		<% if @user.hasCommission %>
+			<%= link_to "Eliminar comisión personalizada", 
+      { controller: 'commission', action: 'destroy', id: @user.commission.id },
+      { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
+      	method: :delete, remote: false, class: 'btn btn-cstm'} %>
+		<%else%>
+			<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
+		
+
+		<%end%>
+			<button type='button' id='btn-simulate' class='btn btn-cstm'> Simular compra</button>
+		
+	<%else%>
+		<h3>Usuario no encontrado</h3>
+	<%end%>
+
+</div>
+
