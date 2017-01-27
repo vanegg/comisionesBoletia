@@ -13,11 +13,13 @@ class BookingController < ApplicationController
 														event_id: 				event_id)
 													 
 		@commission = check_custom_commission(event_id) ? check_custom_commission(event_id) : default_commission(@booking.id)
+		# puts '******************COMISIONES'
+		# puts @commission.card
+		# puts @commission.deposit
 
 
 		if @booking.payment_method == 'card'
 			@booking.ticket_commission = @commission.card
-
 		elsif @booking.payment_method == 'deposit'
 			@booking.ticket_commission = @commission.deposit
 		end
@@ -30,11 +32,13 @@ class BookingController < ApplicationController
 		@booking.total_price = Booking.estimate_total(@booking.price_ticket,
 																									@booking.ticket_quantity,
 																									@booking.total_commission).round(2)
+		# puts '******************TOTALES'
+		# puts @booking.total_commission
+		# puts @booking.total_price	
 
 		@booking.save
 
 		unless has_custom_commission?(event_id)
-			
 			@commission.booking_id = @booking_id 
 			@commission.save
 		end
