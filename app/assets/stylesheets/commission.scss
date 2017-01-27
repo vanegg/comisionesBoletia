@@ -4,3 +4,25 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$first-color:  black;
+/*#4B088A*/
+$second-color: white;
+ /*#088A85;*/
+$third-color:  #86B404;	
+
+
+.jumbotron {
+	width:	100%;
+	height: 350px;
+	position: absolute;
+	left: 0px;
+	background-color: $first-color;
+	border-radius: 7px;
+	border: 2px solid $first-color !important;
+	color: white;
+}
+
+.seekers {
+	margin-top: 400px;
+}
