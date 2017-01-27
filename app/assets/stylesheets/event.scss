@@ -1,3 +1,53 @@
 // Place all the styles related to the Event controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$first-color:  #380B61;
+/*#4B088A*/
+$second-color: #088A85;
+$third-color:  #86B404;	
+
+
+.seeker {
+	border-radius: 7px;
+	border: 2px solid $first-color;
+	background-color: $second-color;
+	color: white; 
+	min-height: 300px ;
+	font-size: 20px;
+}
+
+.title-seeker {
+	border-bottom: 2px solid $first-color;
+	background-color: $first-color;
+	padding-top: 15px;
+	h4 {
+		font-size: 22px;
+	}
+}
+
+.form-seeker {
+	padding-top: 35px;
+	h4 {
+		font-size: 22px !important;
+	}
+}
+
+
+
+.form-control {
+	height: 45px;
+	font-size: 20px;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.btn-block {
+	background-color: black;
+	font-size: 20px;
+	height: 3.3em;
+	margin-top: 15px;
+}
