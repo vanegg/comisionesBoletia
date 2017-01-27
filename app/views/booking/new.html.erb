@@ -1,0 +1,58 @@
+<div class="booking-group">	
+
+	<div class="page-header">
+	  <h1>Simulador de compra <small> para el evento <%=@event.name%></small></h1>
+	</div>
+
+		<div class="booking-form">
+			
+			<%= form_for :booking, url: create_booking_path do |f|%>
+
+				<div class="row">
+					<div class="col-sm-3">
+					 	<p>Precio del Boleto: $</p>
+					</div>
+
+					<div class="col-sm-6">
+						<%= f.text_field :price_ticket, value: nil, placeholder: "Precio por boleto", class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
+					</div>
+
+					<div class="col-sm-2"></div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm-3">
+					 	<p>Cantidad de Boletos:</p>
+					</div>
+
+					<div class="col-sm-6">
+						<%= f.text_field :ticket_quantity, value: nil, placeholder: "Cantidad de boletos", class: "form-control", onkeypress: "return isNumberKey(event)"%>
+					</div>
+
+					<div class="col-sm-2"></div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm-3">
+					 	<p>Método de pago:</p>
+					</div>
+
+					<div class="col-sm-6">
+						<%= f.select (:payment_method) do%>
+						<% [['Tarjeta', 'card'], ['Depósito', 'deposit']].each do |c| -%>
+		    		<%= content_tag(:option, c.first, value: c.last) %>
+		  			<% end %>
+				<% end %>
+					</div>
+
+					<div class="col-sm-2"></div>
+				</div>
+				<br>
+				<div class="row">
+					<%=	f.hidden_field :event_id, value: @event.id%>
+					<%= f.submit "Calcular precio para reservar", class: "btn btn-cstm"%>					
+				</div>
+
+			<% end %>
+		</div>
+</div>

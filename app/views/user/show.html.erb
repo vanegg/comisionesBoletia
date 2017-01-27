@@ -18,8 +18,6 @@
 			object: @type = '2' %>
 
 		<%end%>
-		<br>
-			<button type='button' id='btn-simulate' class='btn btn-cstm'> Simular compra</button>
 		</div>	
 	<%else%>
 		<h3>Usuario no encontrado</h3>
@@ -48,7 +46,7 @@
             <td><%=event.id%></td>
             <td><%=event.name%></td>
             <td><%=link_to 'Detalles',event_path(event) %></td>
-            <td><%= link_to ' Simular Compra',"", method: "post"%></td>
+            <td><button type='button' id='btn-simulate' class='btn btn-cstm'><%=link_to "Simular compra", new_booking_path(event: event.id) %></button></td>
           </tr>
         <% end %>
       </tbody>

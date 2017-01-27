@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post "/commission/create",	to: 'commission#create', 	as: 'create_commission'
   post "/event/search", 		to: "event#search", 		as: "event_show"
   post "/user/search", 			to: "user#search", 			as: "user_show"
-
+  post "/booking/create",		to: 'booking#create',		as: 'create_booking'
   resources :commission
   resources :event
   resources	:user

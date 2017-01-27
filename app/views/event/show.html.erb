@@ -3,13 +3,13 @@
 	<% if @status%>
 
 		<div class= "event-data">
-		<p>"Evento encontrado N° <%= @event.id%></p>
-		<p>"Evento: <%= @event.name%></p>
-		<p>va"<%= @event.category%></p>
-		<p>"En <%= @event.place%></p>
-		<p>"el día <%= @event.date_event%></p>
-		<p>"Descripción: <%= @event.description%></p>
-		<p>"Organizado por: <%= @user%></p>
+			<p>"Evento encontrado N° <%= @event.id%></p>
+			<p>"Evento: <%= @event.name%></p>
+			<p>va"<%= @event.category%></p>
+			<p>"En <%= @event.place%></p>
+			<p>"el día <%= @event.date_event%></p>
+			<p>"Descripción: <%= @event.description%></p>
+			<p>"Organizado por: <%= @user%></p>
 		</div>
 		<div class = "event-buttons">
 			<% if @event.hasCommission %>
@@ -18,18 +18,15 @@
 	      { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
 	      	method: :delete, remote: false}%>
 			<%else%>
-			<%= link_to "Personalizar comisión", "", id: 'customize', class: 'btn btn-cstm'%>
+			<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
 				<%= render 'commission/custom_form',
 				object: @type = '1' %>
 			<%end%>
 			<br>
-				<button type='button' id='btn-simulate' class='btn btn-cstm'> Simular compra</button>
+				<button type='button' id='btn-simulate' class='btn btn-cstm'><%=link_to "Simular compra", new_booking_path(:event => @event.id) %></button>
 		</div>	
 	<%else%>
 		<h3>Evento no encontrado</h3>
 	<%end%>
 
 </div>
-
-
-<% form_tag%>
