@@ -5,7 +5,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$first-color:  black;
+$first-color:  #380B61;
 /*#4B088A*/
 $second-color: white;
  /*#088A85;*/
@@ -17,12 +17,20 @@ $third-color:  #86B404;
 	height: 350px;
 	position: absolute;
 	left: 0px;
-	background-color: $first-color;
+	background-color: black;
 	border-radius: 7px;
-	border: 2px solid $first-color !important;
+	border: 2px solid black !important;
 	color: white;
 }
 
 .seekers {
 	margin-top: 400px;
+}
+
+.customize_commission h3 {
+	color: $first-color !important;
+}
+
+.input-commission {
+	
 }

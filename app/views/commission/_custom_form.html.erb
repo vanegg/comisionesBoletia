@@ -1,36 +1,45 @@
 <div class= 'customize_commission' style="display: none">
-<h3>Personalizar comisión</h3>
+	<h3>Personalizar comisión</h3>
 	<%=form_for :commission , url: create_commission_path  do |f|%>
 
     <p>Indica las nuevas comisiones por depósito y por tarjeta:</p>
-    <div class="row">
-    	<div class="col-sm-2">
-			 	 <p>Depósito:   $</p>
-			</div>
-   		<div class="col-sm-3">
-			 	 <%= f.text_field :deposit, value: 10.00, required: true,  class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
-			</div> 
-			<div class="col-sm-1">
-			</div>   
+
+    <div class= "input-commission col-sm-11 col-sm-offset-1">
+
+	    <div class="row">
+	    	<div class= "col-sm-8 col-sm-offset-2">
+		    	<div class="col-sm-2"><p>Depósito:</p></div>
+
+		   		<div class="col-sm-6">
+			   		<div class="input-group">
+						  <span class="input-group-addon">$</span>
+						 	 <%= f.text_field :deposit, value: 10.00, required: true,  class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
+						</div>
+					</div> 
+				</div>
+	    </div>
+
+	    <div class="row">
+	    	<div class= "col-sm-8 col-sm-offset-2">
+		    	<div class="col-sm-2"><p>Tarjeta:</p></div>
+
+		   		<div class="col-sm-6">
+		   			<div class="input-group">
+						 	<%= f.text_field :card, value: 3.5, required: true, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
+						  <span class="input-group-addon">%</span>
+						</div>				 	 
+					</div>
+				</div>
+    	</div>
     </div>
-    <div class="row">
-    	<div class="col-sm-2">
-			 	 <p>Tarjeta:</p> 
-			</div>
-   		<div class="col-sm-3">
-			 	 <%= f.text_field :card, value: 3.5, required: true, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
-			</div>
-			<div class="col-sm-1">
-			%
-			</div> 
-    </div>
+
     <%= f.hidden_field :type, value: @type%></p>
     <%= f.hidden_field :id, value: params[:id]%></p>
-    
-    <p>*Nota: Las comisiones son por ticket.</p>
-   	<button type='button' id= "btn-cancel" class="btn btn-cstom">Cancelar</button>
-    <%= f.submit("Personalizar", class: "btn btn-cstom") %>
-
+    <br>
+    <div class= "row"><p>*Nota: Las comisiones son por ticket.</p></div>
+    <div class= "row">
+	   	<button type='button' id= "btn-cancel" class="btn btn-cstom btn-event">Cancelar</button>
+	    <%= f.submit("Personalizar", class: "btn btn-cstom btn-event") %>
+    </div>
 	<%end%>
-
 </div>
