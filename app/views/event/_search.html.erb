@@ -5,16 +5,17 @@
 	<%=form_tag event_show_path, method: :post, remote: false do%>
 
 		<div class="row">
+			<div class= "error"></div>
 			<div class="col-sm-1">
 			 	<h4> id:</h4>
 			</div>
 
 			<div class="col-sm-6">			
-				<%= text_field_tag 'event_id', nil, placeholder: 'Ingresa el id del evento..',class: "form-control", onkeypress: "return isNumberKey(event)"%>
+				<%= text_field_tag 'event_id', nil, placeholder: 'Ingresa el id del evento..', required: true, class: "field-valid-event form-control", onkeypress: "return isNumberKey(event)"%>
 			</div>
 
 			<div class="col-sm-2">
-			 	<%= submit_tag("Buscar", class: "btn btn-cstom")  %>
+			 	<%= submit_tag("Buscar", id: "btn-event", class: "btn btn-cstom btn-valid-event")  %>
 			</div>
 		</div>	
 	<%end%>

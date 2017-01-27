@@ -14,7 +14,7 @@
 					</div>
 
 					<div class="col-sm-6">
-						<%= f.text_field :price_ticket, value: nil, placeholder: "Precio por boleto", class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
+						<%= f.text_field :price_ticket, value: nil, placeholder: "Precio por boleto", required: true, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
 					</div>
 
 					<div class="col-sm-2"></div>
@@ -26,7 +26,7 @@
 					</div>
 
 					<div class="col-sm-6">
-						<%= f.text_field :ticket_quantity, value: nil, placeholder: "Cantidad de boletos", class: "form-control", onkeypress: "return isNumberKey(event)"%>
+						<%= f.text_field :ticket_quantity, value: nil, placeholder: "Cantidad de boletos", required: true, class: "form-control", onkeypress: "return isNumberKey(event)"%>
 					</div>
 
 					<div class="col-sm-2"></div>

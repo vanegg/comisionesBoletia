@@ -15,7 +15,11 @@
 		<div class = "booking-details">
 			<p>Cantidad de boletos: <%=booking.ticket_quantity%></p>
 			<p>Precio unitario: $<%=booking.price_ticket%></p>
-			<p>Método de pago: <%=booking.payment_method%></p>
+			<%if booking.payment_method == 'card'%>
+			<p>Método de pago: Tarjeta</p>
+			<% else %>
+			<p>Método de pago: Depósito</p>
+			<% end %>
 			<p>Comisión por boleto: $<%=booking.ticket_commission%></p>
 			<p>Comisión total: $<%=booking.total_commission%></p>
 			<p>Precio total:$<%=booking.total_price%></p>

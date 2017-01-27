@@ -8,7 +8,7 @@
 			 	 <p>Depósito:   $</p>
 			</div>
    		<div class="col-sm-3">
-			 	 <%= f.text_field :deposit, value: 10.00, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
+			 	 <%= f.text_field :deposit, value: 10.00, required: true,  class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
 			</div> 
 			<div class="col-sm-1">
 			</div>   
@@ -18,7 +18,7 @@
 			 	 <p>Tarjeta:</p> 
 			</div>
    		<div class="col-sm-3">
-			 	 <%= f.text_field :card, value: 3.5, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
+			 	 <%= f.text_field :card, value: 3.5, required: true, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
 			</div>
 			<div class="col-sm-1">
 			%
