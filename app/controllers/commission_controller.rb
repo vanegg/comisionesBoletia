@@ -34,7 +34,7 @@ class CommissionController < ApplicationController
     end
     puts @commission.save
     if @commission.save
-      flash.now[:success] = "Commission successfully saved"
+      flash.now[:success] = "Commission personalizada"
     else
       flash.now[:error] = "Commission not saved in database"
     end
@@ -42,11 +42,24 @@ class CommissionController < ApplicationController
   end
 
   def destroy
-  	puts '***********'
-		puts params
-		Event.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_to users_url
+    if Commission.exists?(params[:id])
+      commission = Commission.find(params[:id])
+
+      if commission.event_id != nil 
+        event = Event.find(commission.event_id)
+        event.hasCommission = false
+        puts event.save
+
+      elsif commission.user_id != nil
+        user = User.find(commission.user_id)
+        user.hasCommission = false
+        puts user.save
+      end
+
+  		commission.destroy
+      flash[:success] = "Comisión eliminada"
+      redirect_back(fallback_location: root_path)
+    end
   end
 
 end

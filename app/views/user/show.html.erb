@@ -9,9 +9,9 @@
 		<div class = "event-buttons">
 		<% if @user.hasCommission %>
 			<%= link_to "Eliminar comisión personalizada", 
-      { controller: 'commission', action: 'destroy', id: @user.commission.id },
+      { controller: 'commission', action: 'destroy', id: @user.commission.id }, data:
       { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
-      	method: :delete, remote: false, class: 'btn btn-cstm'} %>
+      	method: :delete, remote: false} %>
 		<%else%>
 			<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
 			<%= render 'commission/custom_form',

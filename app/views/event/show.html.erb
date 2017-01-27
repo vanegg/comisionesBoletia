@@ -14,11 +14,11 @@
 		<div class = "event-buttons">
 			<% if @event.hasCommission %>
 				<%= link_to "Eliminar comisión personalizada", 
-	      { controller: 'commission', action: 'destroy', id: @event.commission.id },
+	      { controller: 'commission', action: 'destroy', id: @event.commission.id }, id: "btn-delete",  class: "btn btn-cstm", data:
 	      { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
-	      	method: :delete, remote: false, class: 'btn btn-cstm'} %>
+	      	method: :delete, remote: false}%>
 			<%else%>
-				<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
+			<%= link_to "Personalizar comisión", "", id: 'customize', class: 'btn btn-cstm'%>
 				<%= render 'commission/custom_form',
 				object: @type = '1' %>
 				<%puts "lalalala"%>
