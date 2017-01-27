@@ -12,9 +12,20 @@ class Booking < ApplicationRecord
 	
 	validates	:ticket_quantity,		numericality: { only_integer: true }
 
-	def self.estimate_t_commission(ticket_commission, payment_method)
-		puts "Estimando comision total"
-		return 300.0
+	def self.estimate_t_commission(price,quantity,ticket_commission, payment_method)
+		if payment_method == 'card'
+			price * quantity * (ticket_commission/100)
+
+		elsif payment_method == 'deposit'
+			quantity * ticket_commission
+
+		else
+			0.0
+		end
+	end
+
+	def self.estimate_total(price,quantity,total_commission)
+		price * quantity + total_commission
 	end
 
 end
