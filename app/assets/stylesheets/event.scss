@@ -18,9 +18,17 @@ $third-color:  #86B404;
 	font-size: 20px;
 }
 
-.title-seeker, .title-event {
+.title-seeker{
 	border-bottom: 2px solid $first-color;
 	background-color: $first-color;
+	padding-top: 15px;
+	h4 {
+		font-size: 22px;
+	}
+}
+
+.title-event {
+	color: $first-color;
 	padding-top: 15px;
 	h4 {
 		font-size: 22px;
@@ -65,9 +73,6 @@ $third-color:  #86B404;
 
 .event-group {
 	border-radius: 7px;
-	border: 2px solid $first-color;
-	background-color: $second-color;
-	color: white; 
 }
 
 .event-data {
@@ -91,5 +96,5 @@ $third-color:  #86B404;
 
 .event-no-found {
 	margin-top: 130px;
-	color: black;
+	color: gray;
 }
