@@ -3,7 +3,7 @@ class User < ApplicationRecord
 	before_save   :downcase_email
 
 	has_many	:events
-	has_one		:commision
+	has_one		:commission
 
 	validates	:name, 		presence: true, length: { maximum: 50 }
 
