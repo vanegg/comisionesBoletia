@@ -1,3 +1,14 @@
 // Place all the styles related to the Booking controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$first-color:  #380B61;
+$second-color: white;
+
+.title-booking {
+	color: $first-color;
+	small {
+		color: $first-color;
+	}
+}
+

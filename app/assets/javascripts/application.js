@@ -18,7 +18,11 @@
 $(document).ready(function(){
 
   $(".alert" ).fadeOut(6000);
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> CSS
   $("body").on("click", '#customize', function(){
     $(".customize_commission").toggle(1000);
     $('#customize').hide();

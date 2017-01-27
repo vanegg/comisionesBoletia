@@ -1,50 +1,63 @@
-<div class="booking-group">	
+<div class = "row">
+  <div class = "col-sm-10 col-sm-offset-1"> 
 
-	<div class="page-header">
-	  <h1>Simulador de compra <small> para el evento <%=@event.name%></small></h1>
-	</div>
+		<div class="booking-group">	
 
-		<div class="booking-form">
-			
-			<%= form_for :booking, url: create_booking_path do |f|%>
+			<div class="title-booking text-center">
+			  <h3>Simulador de compra </h3>
+			  <h3><small> para el evento <%=@event.name%></small></h3>
+			</div>
+			<br>
 
-				<div class="row">
-					<div class="col-sm-3">
-					 	<p>Precio del Boleto: $</p>
+			<div class="booking-form">
+				
+				<%= form_for :booking, url: create_booking_path do |f|%>
+
+					<div class="row">
+						<div class= "col-sm-8 col-sm-offset-2"> 
+							<div class="col-sm-3 text-center"><p>Precio del Boleto:</p></div>
+
+							<div class="col-sm-9">
+								<div class="input-group">
+							  	<span class="input-group-addon">$</span>
+									<%= f.text_field :price_ticket, value: nil, placeholder: "Precio por boleto", required: true, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>							 	 
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class= "col-sm-8 col-sm-offset-2"> 
+							<div class="col-sm-3 text-center"><p>Cantidad de Boletos:</p></div>
+
+							<div class="col-sm-9">
+								<%= f.text_field :ticket_quantity, value: nil, placeholder: "Cantidad de boletos", required: true, class: "form-control", onkeypress: "return isNumberKey(event)"%>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class= "col-sm-8 col-sm-offset-2"> 			
+							<div class="col-sm-3 text-center"><p>Método de pago:</p></div>
+
+							<div class="col-sm-9 ">
+								<%= f.select (:payment_method) do%>
+									<% [['Tarjeta', 'card'], ['Depósito', 'deposit']].each do |c| -%>
+					    		<%= content_tag(:option, c.first, value: c.last) %>
+					  			<% end %>
+								<% end %>
+							</div>
+						</div>
+					</div>
+					<br>			
+					<div class="row text-center">
+						<%=	f.hidden_field :event_id, value: @event.id%>
+						<button type='button' id='btn-return' class='btn btn-cstm btn-event'><%=link_to "Regresar", event_path(@event.id) %></button>
+
+						<%= f.submit "Calcular precio para reservar", class: "btn btn-cstm btn-event"%>					
 					</div>
 
-					<div class="col-sm-6">
-						<%= f.text_field :price_ticket, value: nil, placeholder: "Precio por boleto", required: true, class: "form-control", onkeypress: "return isNumberKeyorPoint(event)"%>
-					</div>
-
-					<div class="col-sm-2"></div>
-				</div>
-				<br>
-				<div class="row">
-					<div class="col-sm-3">
-					 	<p>Cantidad de Boletos:</p>
-					</div>
-
-					<div class="col-sm-6">
-						<%= f.text_field :ticket_quantity, value: nil, placeholder: "Cantidad de boletos", required: true, class: "form-control", onkeypress: "return isNumberKey(event)"%>
-					</div>
-
-					<div class="col-sm-2"></div>
-				</div>
-				<br>
-				<div class="row">
-					<div class="col-sm-3">
-					 	<p>Método de pago:</p>
-					</div>
-
-					<div class="col-sm-6">
-						<%= f.select (:payment_method) do%>
-						<% [['Tarjeta', 'card'], ['Depósito', 'deposit']].each do |c| -%>
-		    		<%= content_tag(:option, c.first, value: c.last) %>
-		  			<% end %>
-				<% end %>
-					</div>
-
+<<<<<<< HEAD
 					<div class="col-sm-2"></div>
 				</div>
 				<br>
@@ -55,5 +68,10 @@
 				</div>
 
 			<% end %>
+=======
+				<% end %>
+			</div>
+>>>>>>> CSS
 		</div>
+	</div>
 </div>

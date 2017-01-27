@@ -4,3 +4,25 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$first-color:  #380B61;
+$second-color: white;
+
+.jumbotron {
+	width:	100%;
+	height: 350px;
+	position: absolute;
+	left: 0px;
+	background-color: black;
+	border-radius: 7px;
+	border: 2px solid black !important;
+	color: white;
+}
+
+.seekers {
+	margin-top: 400px;
+}
+
+.customize_commission h3 {
+	color: $first-color !important;
+}

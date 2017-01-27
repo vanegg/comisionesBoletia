@@ -1,27 +1,43 @@
-<div class="user-group">	
+<div class = "row">
+  <div class = "col-sm-8 col-sm-offset-2"> 
+    <% if @status%>
+      <div class="user-group">	
 
-	<% if @status%>
-		<div class= "event-data">
-		<p>Usuario encontrado N° <%= @user.id%></p>
-		<p>Usuario: <%= @user.name %></p>
-		<p>email:<%= @user.email %></p>
-		</div>
-		<div class = "event-buttons">
-		<% if @user.hasCommission %>
-			<%= link_to "Eliminar comisión personalizada", 
-      { controller: 'commission', action: 'destroy', id: @user.commission.id }, data:
-      { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
-      	method: :delete, remote: false} %>
-		<%else%>
-			<button type='button' id='customize' class='btn btn-cstm'>Personalizar comisión</button>
-			<%= render 'commission/custom_form',
-			object: @type = '2' %>
+        <div class = "title-user text-center">
+          <h3>Usuario: <%= @user.name%></h3>
+        </div>
+        <br>
+    		<div class= "user-data text-center">
+      		<p>#ID: <%= @user.id%></p>
+      		<p>email:<%= @user.email %></p>
+    		</div>
+        <br>
+    		<div class = "event-buttons commission-btn text-center">
+    		<% if @user.hasCommission %>
+    			<button type='button' class='btn bt-cstm btn-event'><%= link_to "Eliminar comisión personalizada", 
+          { controller: 'commission', action: 'destroy', id: @user.commission.id }, data:
+          { confirm: "¿Estás seguro de eliminar la comisión personalizada?", 
+          	method: :delete, remote: false} %></button>
+    		<%else%>
+    			<button type='button' id='customize' class='btn btn-cstm btn-event'>Personalizar comisión</button>
+    			<%= render 'commission/custom_form',
+    			object: @type = '2' %>
 
+<<<<<<< HEAD
 		<%end%>
 		</div>
     <div class= "events-user">  
   <h3>Eventos que ha organizado este usuario:</h3>
   <table class="table">
+=======
+    		<%end%>
+  		</div>
+      <br>
+     <div class= "events-user">  
+   <h3>Eventos que ha organizado este usuario:</h3>
+   <br>
+   <table class="table">
+>>>>>>> CSS
     <thead>
       <tr>
         <th>#ID</th>
@@ -40,13 +56,38 @@
             <td><%=event.id%></td>
             <td><%=event.name%></td>
             <td><%=link_to 'Detalles',event_path(event) %></td>
-            <td><button type='button' id='btn-simulate' class='btn btn-cstm'><%=link_to "Simular compra", new_booking_path(event: event.id) %></button></td>
+            <td><button type='button' id='btn-simulate' class='event-buttons simulation-btn btn btn-cstm'><%=link_to "Simular compra", new_booking_path(event: event.id) %></button></td>
           </tr>
         <% end %>
       </tbody>
       </table>
     <% end %> 
+    <div class = "event-buttons return-btn text-center">
+            <button type='button' id='btn-return' class='btn btn-cstm btn-event'><%=link_to "Regresar a Inicio", root_path %></button>
+          </div>
+  </div>
 </div>
+    <%else%>
+     <div class="event-no-found">
+        <div class="row text-center">
+          <div class="col-sm-12">
+            <h4>El usuario que indicaste no pudo ser encontrado. Por favor, intenta otra vez.</h4>
+          </div>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1"> 
+              <%= render partial: 'user/search'%>            
+            </div>
+          </div>
+          <br>
+          <div class = "event-buttons return-btn text-center">
+            <button type='button' id='btn-return' class='btn btn-cstm btn-event'><%=link_to "Regresar a Inicio", root_path %></button>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
+<<<<<<< HEAD
 	<%else%>
 		<div class="user-no-found">
       <div class="row">
@@ -61,3 +102,5 @@
 	<%end%>
   <button type='button' id='btn-return' class='btn btn-cstm'><%=link_to "Regresar a Inicio", root_path %></button>
 </div>
+=======
+>>>>>>> CSS

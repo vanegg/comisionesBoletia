@@ -1,9 +1,10 @@
 <%= wicked_pdf_stylesheet_link_tag "documents" %>
+
 	<% booking = Booking.find(params[:id])%>
 	<div class = "booking_summarize">
 
-		<div class = "title-booking center">
-			<h2>Boletia</h2>
+		<div class = "title-booking text-center">
+			<h2>Boletia</h2>  	
 		</div>
 
 		<div>
@@ -13,16 +14,48 @@
 		</div>
 
 		<div class = "booking-details">
-			<p>Cantidad de boletos: <%=booking.ticket_quantity%></p>
-			<p>Precio unitario: $<%=booking.price_ticket%></p>
-			<%if booking.payment_method == 'card'%>
-			<p>Método de pago: Tarjeta</p>
-			<% else %>
-			<p>Método de pago: Depósito</p>
-			<% end %>
-			<p>Comisión por boleto: $<%=booking.ticket_commission%></p>
-			<p>Comisión total: $<%=booking.total_commission%></p>
-			<p>Precio total:$<%=booking.total_price%></p>
+		<table>
+		  <tr>
+		    <th></th>
+		    <th></th>
+		  </tr>
 
+		  <tr>
+		    <td>Cantidad de boletos:</td>
+		    <td><%=booking.ticket_quantity%></td>
+		  </tr>
+
+		  <tr>
+		    <td>Precio unitario:</td>
+		    <td>$<%=booking.price_ticket%></td>
+		  </tr>
+
+		  <tr>
+		    <td> Método de pago:</td>
+				<%if booking.payment_method == 'card'%>
+		    	<td>Tarjeta</td>
+				<% else %>
+					<td>Depósito</td>
+				<% end %>
+		  </tr>
+
+		  <tr>
+		    <td>Comisión por boleto:</td>
+		    <td>$<%=booking.ticket_commission%></td>
+		  </tr>
+
+		  <tr>
+		    <td>Comisión total:</td>
+		    <td>$<%=booking.total_commission%></td>
+		  </tr>
+
+		   <tr>
+		    <td><strong>Precio total:</strong></td>
+		    <td><strong>$<%=booking.total_price%></strong></td>
+		  </tr>
+		</table>			
+		<br>
 		</div>
 </div>
+
+

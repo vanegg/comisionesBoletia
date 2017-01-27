@@ -1,3 +1,98 @@
 // Place all the styles related to the Event controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$first-color:  #380B61;
+$second-color: white;
+
+.seeker {
+	border-radius: 7px;
+	border: 2px solid $first-color;
+	background-color: $second-color;
+	color: white; 
+	min-height: 300px ;
+	font-size: 20px;
+}
+
+.title-seeker{
+	border-bottom: 2px solid $first-color;
+	background-color: $first-color;
+	padding-top: 15px;
+	h4 {
+		font-size: 22px;
+	}
+}
+
+.title-event {
+	color: $first-color;
+	padding-top: 15px;
+	h4 {
+		font-size: 22px;
+	}
+}
+
+.form-seeker {
+	padding-top: 35px;
+	h4 {
+		color: gray;
+		font-size: 22px !important;
+	}
+}
+
+.form-control {
+	height: 45px;
+	font-size: 20px;
+}
+
+.btn-block {
+	background-color: white;
+	color: $first-color;
+	border: 1px solid $first-color;
+	font-size: 20px;
+	height: 3.3em;
+	width: 91% !important;
+	margin-top: 15px;
+	margin-left: 21px;
+}
+
+.header-page {
+	width:	100%;
+	height: 100px;
+	position: absolute;
+	left: 0px;
+	background-color: black;
+	border: 2px solid black !important;
+	color: white;
+}
+
+.event-group, .booking-group , .user-group,{
+	margin-top: 130px;
+}
+
+.event-group {
+	border-radius: 7px;
+}
+
+.event-data {
+	color: gray;
+	border-bottom: 2px solid $first-color;
+}
+
+.event-buttons {
+	padding-bottom: 10px;
+}
+
+.btn-event {
+	color: $first-color !important;
+	border: 1px solid $first-color !important;
+	background-color: white !important;
+	a {
+		color: $first-color !important;
+		background-color: white !important;
+	}
+}
+
+.event-no-found {
+	margin-top: 130px;
+	color: gray;
+}

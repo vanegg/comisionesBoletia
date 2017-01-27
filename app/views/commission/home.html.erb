@@ -1,13 +1,16 @@
 <div class="jumbotron">
   <h2 class= "text-center">Módulo para personalizar comisiones</h2>
   <p class= "text-center">para Boletia</p>
+  <div class= "text-center"><%= image_tag "boletia_logo"%></div> 
 </div>
 
-<div class="row">
-	<div class="col-sm-6">
-			<%= render partial: 'event/search'%>
-	</div>
-	<div class="col-sm-6">
-			<%= render partial: 'user/search'%>
+<div class="row seekers">
+	<div class="col-sm-12">
+		<div class="col-sm-5 col-sm-offset-1">
+				<%= render partial: 'event/search'%>
+		</div>
+		<div class="col-sm-5 ">
+				<%= render partial: 'user/search'%>
+		</div>
 	</div>
 </div>

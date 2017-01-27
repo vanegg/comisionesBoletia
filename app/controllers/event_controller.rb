@@ -15,7 +15,11 @@ class EventController < ApplicationController
 				flash.now[:success] = "¡Evento encontrado!"				
 		else
 				@status = false
+<<<<<<< HEAD
 				# flash.now[:danger] = "¡Evento no encontrado!"	
+=======
+				flash.now[:danger]	= "¡Evento no encontrado!"
+>>>>>>> CSS
 		end
 	end
 

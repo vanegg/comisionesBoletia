@@ -1,24 +1,30 @@
-<h4> Buscador por Usuario</h4>
+<div class = "seeker">
+	<div class = "title-seeker text-center">
+		<h4> Buscador por Usuario</h4>
+	</div>
 
-<div class="form-group">
+	<div class="form-group form-seeker">
 
-	<%=form_tag user_show_path, method: :post, remote: false do%>
+		<%=form_tag user_show_path, method: :post do%>
 
-		<div class="row">
-			<div class="col-sm-1">
-			 	<h4> id:</h4>
+			<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+					<div class="col-sm-1 text-center">
+					 	<h4> id:</h4>
+					</div>
+
+					<div class="col-sm-10">			
+						<%= text_field_tag 'user_id', nil, placeholder: 'Ingresa el id del usuario..',required: true, class: "form-control", onkeypress: "return isNumberKey(event)"%>
+					</div>				
+				</div>
+			</div>	
+			<br>
+			<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				 	<%= submit_tag("Buscar", class: "btn btn-block")  %>
+				</div>
 			</div>
+		<%end%>
 
-			<div class="col-sm-6">			
-				<%= text_field_tag 'user_id', nil, placeholder: 'Ingresa el id del usuario..',required: true, class: "form-control", onkeypress: "return isNumberKey(event)"%>
-			</div>
-
-			<div class="col-sm-2">
-			 	<%= submit_tag("Buscar", class: "btn btn-cstom")  %>
-			</div>
-		</div>	
-	<%end%>
-
+	</div>
 </div>
-
-<div class= "found_users">	</div>
