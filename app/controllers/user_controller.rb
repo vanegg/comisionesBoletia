@@ -17,4 +17,5 @@ class UserController < ApplicationController
 				flash[:danger]	= "¡Usuario no encontrado!"
 			end
 	end
+	
 end

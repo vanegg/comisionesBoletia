@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   root 'commission#home'
 
   get '/home',					to: 'commission#home'
-  # get '/event',					to: 'event#show', 			as: 'event'
   post "/commission/create",	to: 'commission#create', 	as: 'create_commission'
-  # delete "/commission/delete",	to: 'commission#destroy',	as: 'delete_commission'
+  post "/event/search", 		to: "event#search", 		as: "event_show"
+  post "/user/search", 			to: "user#search", 			as: "user_show"
+
   resources :commission
   resources :event
   resources	:user
-
-  post "/event/search", to: "event#search", as: "event_show"
-  post "/user/search", to: "user#search", as: "user_show"
+  resources :booking
 end
