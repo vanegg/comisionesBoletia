@@ -18,7 +18,7 @@ $third-color:  #86B404;
 	font-size: 20px;
 }
 
-.title-seeker {
+.title-seeker, .title-event {
 	border-bottom: 2px solid $first-color;
 	background-color: $first-color;
 	padding-top: 15px;
@@ -40,11 +40,6 @@ $third-color:  #86B404;
 	font-size: 20px;
 }
 
-.col-centered {
-    float: none;
-    margin: 0 auto;
-}
-
 .btn-block {
 	background-color: black;
 	font-size: 20px;
@@ -64,6 +59,34 @@ $third-color:  #86B404;
 	color: white;
 }
 
-.event-group, .booking-group , .user-group{
-	margin-top: 150px;
+.event-group, .booking-group , .user-group,{
+	margin-top: 130px;
+}
+
+.event-group {
+	border-radius: 7px;
+	border: 2px solid $first-color;
+	background-color: $second-color;
+	color: white; 
+}
+
+.event-data {
+	color: gray;
+	border-bottom: 2px solid $first-color;
+}
+
+.event-buttons {
+	padding-bottom: 10px;
+}
+
+.btn-event {
+	color: $first-color !important;
+	a {
+		color: $first-color !important;
+	}
+}
+
+.event-no-found {
+	margin-top: 130px;
+	color: black;
 }
