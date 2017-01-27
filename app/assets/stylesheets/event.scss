@@ -4,7 +4,8 @@
 
 $first-color:  #380B61;
 /*#4B088A*/
-$second-color: #088A85;
+$second-color: white;
+ /*#088A85;*/
 $third-color:  #86B404;	
 
 
@@ -29,6 +30,7 @@ $third-color:  #86B404;
 .form-seeker {
 	padding-top: 35px;
 	h4 {
+		color: gray;
 		font-size: 22px !important;
 	}
 }

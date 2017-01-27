@@ -15,7 +15,37 @@
  */
 
 body {
-	background-color: #EFF5FB;
+	background-color: #FAFAFA;
   font: sans-serif !important;
 }
 
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid black;
+  color: gray;
+}
+
+footer  a {
+    color: gray;
+    text-decoration: none;
+  }
+
+footer a:hover {
+      color: gray;
+    }
+
+footer  small {
+    float: left;
+  }
+
+footer  ul {
+    float: right;
+    list-style: none;    
+  }
+
+footer  ul li {
+      float: left;
+      margin-left: 15px;
+    }
+}
