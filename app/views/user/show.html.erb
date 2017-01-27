@@ -18,16 +18,10 @@
 			object: @type = '2' %>
 
 		<%end%>
-		</div>	
-	<%else%>
-		<h3>Usuario no encontrado</h3>
-	<%end%>
-
-</div>
-
-<div class= "events-user">	
-	<h3>Eventos que ha organizado este usuario:</h3>
-	<table class="table">
+		</div>
+    <div class= "events-user">  
+  <h3>Eventos que ha organizado este usuario:</h3>
+  <table class="table">
     <thead>
       <tr>
         <th>#ID</th>
@@ -53,4 +47,17 @@
       </table>
     <% end %> 
 </div>
-
+	<%else%>
+		<div class="user-no-found">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>El usuario que indicaste no pudo ser encontrado. Por favor, intenta otra vez.</h4>
+        </div>
+        <div class="col-sm-9">  
+          <%= render partial: 'user/search'%>            
+        </div>
+      </div>
+    </div>
+	<%end%>
+  <button type='button' id='btn-return' class='btn btn-cstm'><%=link_to "Regresar a Inicio", root_path %></button>
+</div>

@@ -3,13 +3,13 @@
 	<% if @status%>
 
 		<div class= "event-data">
-			<p>"Evento encontrado N° <%= @event.id%></p>
-			<p>"Evento: <%= @event.name%></p>
-			<p>va"<%= @event.category%></p>
-			<p>"En <%= @event.place%></p>
-			<p>"el día <%= @event.date_event%></p>
-			<p>"Descripción: <%= @event.description%></p>
-			<p>"Organizado por: <%= @user%></p>
+			<p>Evento encontrado N° <%= @event.id%></p>
+			<p>Evento: <%= @event.name%></p>
+			<p><%= @event.category%></p>
+			<p>En <%= @event.place%></p>
+			<p>el día <%= @event.date_event%></p>
+			<p>Descripción: <%= @event.description%></p>
+			<p>Organizado por: <%= @user%></p>
 		</div>
 		<div class = "event-buttons">
 			<% if @event.hasCommission %>
@@ -23,10 +23,20 @@
 				object: @type = '1' %>
 			<%end%>
 			<br>
-				<button type='button' id='btn-simulate' class='btn btn-cstm'><%=link_to "Simular compra", new_booking_path(:event => @event.id) %></button>
+				<button type='button' id='btn-simulate' class='btn btn-cstm'><%=link_to "Simular compra", new_booking_path(:event => @event.id) %></button>				
 		</div>	
 	<%else%>
-		<h3>Evento no encontrado</h3>
+		<div class="event-no-found">
+			<div class="row">
+				<div class="col-sm-12">
+					<h4>El evento que indicaste no pudo ser encontrado. Por favor, intenta otra vez.</h4>
+				</div>
+				<div class="col-sm-9">	
+					<%= render partial: 'event/search'%>
+						
+				</div>
+			</div>
+		</div>
 	<%end%>
-
+	<button type='button' id='btn-return' class='btn btn-cstm'><%=link_to "Regresar a Inicio", root_path %></button>
 </div>

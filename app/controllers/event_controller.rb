@@ -12,10 +12,10 @@ class EventController < ApplicationController
 				@event = Event.find(params[:id])
 				@user = User.find(@event.user_id).name
 				@status = true
-				flash[:success] = "¡Evento encontrado!"				
+				flash.now[:success] = "¡Evento encontrado!"				
 		else
 				@status = false
-				flash[:danger]	= "¡Evento no encontrado!"
+				# flash.now[:danger] = "¡Evento no encontrado!"	
 		end
 	end
 

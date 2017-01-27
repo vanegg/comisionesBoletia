@@ -31,7 +31,7 @@ class CommissionController < ApplicationController
     if @commission.save
       flash.now[:success] = "Commission personalizada"
     else
-      flash.now[:error] = "Commission not saved in database"
+      flash.now[:error] = "Commission no guardada"
     end
     redirect_back(fallback_location: root_path)
   end
