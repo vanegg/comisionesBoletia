@@ -17,6 +17,8 @@
 
 $(document).ready(function(){
 
+  $(".alert" ).fadeOut(6000);
+  
   $("body").on("click", '#customize', function(){
     $(".customize_commission").toggle(1000);
     $('#customize').hide();
