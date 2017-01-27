@@ -13,10 +13,6 @@ class BookingController < ApplicationController
 														event_id: 				event_id)
 													 
 		@commission = check_custom_commission(event_id) ? check_custom_commission(event_id) : default_commission(@booking.id)
-		# puts '******************COMISIONES'
-		# puts @commission.card
-		# puts @commission.deposit
-
 
 		if @booking.payment_method == 'card'
 			@booking.ticket_commission = @commission.card
@@ -42,6 +38,13 @@ class BookingController < ApplicationController
 			@commission.booking_id = @booking_id 
 			@commission.save
 		end
+
+		redirect_to booking_path(@booking, format: :pdf)
+
+	end
+
+	def show
+		create_pdf(params[:booking])
 	end
 
 	private
@@ -79,5 +82,22 @@ class BookingController < ApplicationController
 		def default_commission(booking_id)
 			 c = Commission.create(booking_id: booking_id)
 		end
+
+		def create_pdf(booking)
+      respond_to do |format|
+      format.html
+      format.pdf do
+        @example_text = "some text"
+        render :pdf => "booking",
+               :template => "booking/booking.pdf.erb",
+               :layout => "pdf.html",
+               :footer => {
+                    # :center => "Center",
+                    # :left => "Left",
+                    # :right => "Right"
+                 }
+      end
+    end
+    end
 
 end
