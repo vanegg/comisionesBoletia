@@ -81,8 +81,11 @@ $third-color:  #86B404;
 
 .btn-event {
 	color: $first-color !important;
+	border: 1px solid $first-color !important;
+	background-color: white !important;
 	a {
 		color: $first-color !important;
+		background-color: white !important;
 	}
 }
 
