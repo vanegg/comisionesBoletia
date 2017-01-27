@@ -44,7 +44,7 @@ class BookingController < ApplicationController
 	end
 
 	def show
-		create_pdf(params[:booking])
+		create_pdf(params[:id])
 	end
 
 	private
