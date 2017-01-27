@@ -39,13 +39,13 @@ class BookingController < ApplicationController
 			@commission.save
 		end
 
-		redirect_to booking_path(@booking, format: :pdf)
-		#redirect_to booking_path(@booking)
+		#redirect_to booking_path(@booking, format: :pdf)
+		redirect_to booking_path(@booking)
 
 	end
 
 	def show
-		create_pdf(params[:id])
+		# create_pdf(params[:id])
 	end
 
 	private
