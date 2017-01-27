@@ -53,3 +53,17 @@ $third-color:  #86B404;
 	margin-top: 15px;
 	margin-left: 21px;
 }
+
+.header-page {
+	width:	100%;
+	height: 100px;
+	position: absolute;
+	left: 0px;
+	background-color: black;
+	border: 2px solid black !important;
+	color: white;
+}
+
+.event-group, .booking-group , .user-group{
+	margin-top: 150px;
+}
