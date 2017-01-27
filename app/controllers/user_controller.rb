@@ -11,10 +11,10 @@ class UserController < ApplicationController
 		if User.exists?(params[:id])
 				@user = User.find(params[:id])
 				@status = true
-				flash[:success] = "¡Usuario encontrado!"				
+				flash.now[:success] = "¡Usuario encontrado!"				
 			else
 				@status = false
-				flash[:danger]	= "¡Usuario no encontrado!"
+				flash.now[:danger]	= "¡Usuario no encontrado!"
 			end
 	end
 	
