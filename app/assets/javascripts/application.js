@@ -40,3 +40,8 @@ function isNumberKeyorPoint(e) {
   var charCode = (e.which) ? e.which : event.keyCode;
   return (charCode > 31 && charCode != 46 && (charCode < 48 || charCode > 57)) ? false : true
 }
+
+function onButtonClick() {
+  // Add this to a button's onclick handler
+  FB.AppEvents.logEvent("sentFriendRequest");
+}
