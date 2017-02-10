@@ -27,7 +27,8 @@ $(document).ready(function(){
   $("body").on("click", '#btn-cancel', function(){
     $(".customize_commission").hide(1000);
     $('#customize').show(1000);
-    FB.AppEvents.logEvent("sentFriendRequest");
+    FB.AppEvents.logEvent("Click botón Cancelar");
+    FB.AppEventsLogger.setUserID("Userx00001");
   });
 
 });
